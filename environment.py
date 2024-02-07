@@ -44,8 +44,8 @@ class autonomous_vehicle:
     def get_reward(self, state, action):
         sensor_distance, servo_angle = state[0], state[1]
         if sensor_distance >= 0.45:
+            return -1 if action != 2 else 10
             
-            return 5 if action != self.last_action else 50
         else:
             if servo_angle <= 45:
                 if action == 1:

@@ -59,7 +59,7 @@ void loop()
   int angulo = mover_servo();
   servo.write(angulo);
   bluetooth.println(String(distancia) + "," + String(angulo));
-  delay(800);
+  delay(200);
 }
 
 void select_action(int valor){
@@ -82,8 +82,8 @@ int mover_servo(){
     angulo += 10; // Incrementa el ángulo
     
     // Si el ángulo alcanza los 180 grados, cambia la dirección a decrementar
-    if (angulo >= 180) {
-      angulo = 180; // Asegura que el ángulo no exceda 180
+    if (angulo >= 150) {
+      angulo = 150; // Asegura que el ángulo no exceda 180
       incrementando = false; // Cambia la dirección a decrementar
     }
     return angulo;
